@@ -7,6 +7,7 @@ else
 	echo "File not found"
 fi	
 
+echo "adding a new line"
 sh temp.sh path/test.txt
 
 New line added 
