@@ -4,7 +4,7 @@ node {
         echo "make"
     }
     stage('Test') { 
-        echo "maketest1223"
+        echo "maketest12235666"
     }
     stage('Deploy') { 
         echo "makedeploy"
