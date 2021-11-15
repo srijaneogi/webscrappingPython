@@ -1,11 +1,11 @@
-node {
-    stage('Build') {
-        echo "make"
-    }
-    stage('Test') { 
-        echo "maketest1223"
-    }
-    stage('Deploy') { 
-        echo "makedeploy"
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
     }
 }
