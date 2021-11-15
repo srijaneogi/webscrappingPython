@@ -1,6 +1,5 @@
 
 node {
-    checkout scm
     stage('Build') {
         echo "make"
     }
