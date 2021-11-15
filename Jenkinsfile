@@ -1,7 +1,4 @@
 node {
-    triggers {
-    githubPush()
-    }
     stage('Build') {
         echo "make"
     }
