@@ -1,13 +1,11 @@
+pipeline {
+    agent any
 
-node {
-    checkout scm
-    stage('Build') {
-        echo "make"
-    }
-    stage('Test') { 
-        echo "maketest12235666"
-    }
-    stage('Deploy') { 
-        echo "makedeploy"
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World pipe'
+            }
+        }
     }
 }
