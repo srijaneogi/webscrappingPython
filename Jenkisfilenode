@@ -1,0 +1,35 @@
+node {
+    properties([
+        parameters([
+            string(name: 'filepath', defaultValue: '', description: '')
+            ])
+        ])
+    user = "pqr"
+    def file = "${params.filepath}"
+    stage('Preparation') { // for display purposes
+    flag=0    
+    }
+    stage('Build') {
+        if ("$user" == "abc" || "$user" == "xyz") {
+            echo "hello build"
+            flag=1
+        }
+        else if ("$user" == "pqr" || "$user" == "cds") {
+            echo "hello 2 else if"
+            sh 'cat $file'
+        }
+        else {
+            echo "else .."
+        }
+    }
+    stage('Results') {
+        echo "prints resusts"
+        echo "$flag"
+        if ("$flag" == "1") {
+            echo "updated flag in stage build"
+        }
+        else {
+            echo "now flag is $flag "
+        }
+    }
+}
