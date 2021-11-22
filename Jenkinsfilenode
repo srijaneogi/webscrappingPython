@@ -6,6 +6,7 @@ node {
         ])
     user = "pqr"
     def file = "${params.filepath}"
+    def te = "${params.test}"
     stage('Preparation') { // for display purposes
     flag=0    
     }
@@ -16,7 +17,8 @@ node {
         }
         else if ("$user" == "pqr" || "$user" == "cds") {
             echo "hello 2 else if"
-            sh 'cat $file'
+            echo "$file"
+            echo "$te"
         }
         else {
             echo "else .."
