@@ -1,7 +1,7 @@
 node {
     properties([
         parameters([
-            choice(name: 'condition', choices: ['true', 'false'], description: '')
+            choice(name: 'condition', choices: ['true', 'false'], description: 'Please provide required input in stage view screen if selected condition is true')
             ])
         ])
     def te = "${params.condition}"
