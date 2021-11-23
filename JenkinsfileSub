@@ -28,7 +28,6 @@ node {
             echo "$dockertag"
             def sec = (userInput['target'])
             echo "$sec"
-            // println "Shantanu"
             // println "${params.filepath}"
             // println "$d"
         }
