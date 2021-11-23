@@ -19,7 +19,7 @@ node {
             ])
             def dockertag = input(
             id: 'dockertag', message: '', parameters: [
-            string(defaultValue: '', description: 'File path in format file://./', name: 'docker_tag')
+            string(defaultValue: '', description: 'latest', name: 'docker_tag')
             ])
             echo "$userInput"
             echo (userInput['filepath'])
