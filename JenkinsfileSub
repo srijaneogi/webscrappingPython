@@ -24,9 +24,6 @@ node {
               string(defaultValue: '', description: 'latest', name: 'docker_tag')
               ])
             }
-
-
-
             echo "$userInput"
             echo (userInput['filepath'])
             // echo "${params.userInput.filepath}"
