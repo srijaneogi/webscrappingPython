@@ -13,12 +13,12 @@ node {
         if ("$te" == "true" ) {
             echo "123"
             def userInput = input(
-            id: 'userInput', message: 'Let\'s promote?', parameters: [
+            id: 'userInput', message: 'Please enter Name and Target to continue', parameters: [
             [$class: 'TextParameterDefinition', defaultValue: '', description: 'File path in format file://./', name: 'filepath'],
             [$class: 'TextParameterDefinition', defaultValue: '', description: 'Target', name: 'target']
             ])
             def dockertag = input(
-            id: 'dockertag', message: '', parameters: [
+            id: 'dockertag', message: 'Please enter docker tag to continue', parameters: [
             string(defaultValue: '', description: 'latest', name: 'docker_tag')
             ])
             echo "$userInput"
