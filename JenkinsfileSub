@@ -1,0 +1,43 @@
+node {
+    properties([
+        parameters([
+            choice(name: 'condition', choices: ['true', 'false'], description: '')
+            ])
+        ])
+    def te = "${params.condition}"
+    stage('Preparation') {
+        echo "stage 1"   
+    }
+    stage('Build') {
+        echo "stage 2"
+        if ("$te" == "true" ) {
+            echo "123"
+            def userInput = input(
+            id: 'userInput', message: 'Let\'s promote?', parameters: [
+            [$class: 'TextParameterDefinition', defaultValue: '', description: 'File path in format file://./', name: 'filepath'],
+            [$class: 'TextParameterDefinition', defaultValue: '', description: 'Target', name: 'target']
+            ])
+            def dockertag = input(
+            id: 'dockertag', message: '', parameters: [
+            string(defaultValue: '', description: 'File path in format file://./', name: 'docker_tag')
+            ])
+            echo "$userInput"
+            echo (userInput['filepath'])
+            // echo "${params.userInput.filepath}"
+            //echo "${params.filepath}"
+            echo "$dockertag"
+            def sec = (userInput['target'])
+            echo "$sec"
+            // println "Shantanu"
+            // println "${params.filepath}"
+            // println "$d"
+        }
+        else {
+            echo "condition - $te"
+        }
+    }
+    stage('Results') {
+        echo "stage 3"
+        
+    }
+}
