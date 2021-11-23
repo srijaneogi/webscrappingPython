@@ -37,7 +37,6 @@ node {
         }
     }
     stage('Results') {
-        echo "stage 3"
-        
+        echo "stage 3"       
     }
 }
