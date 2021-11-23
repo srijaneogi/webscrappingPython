@@ -13,7 +13,7 @@ node {
         if ("$te" == "true" ) {
             echo "123"
             try {
-                timeout(time: 5, unit: 'SECONDS') {
+                timeout(time: 15, unit: 'SECONDS') {
                     def userInput = input(
                     id: 'userInput', message: 'Please enter Name and Target to continue', parameters: [
                     [$class: 'TextParameterDefinition', defaultValue: '', description: 'File path in format file://./', name: 'filepath'],
