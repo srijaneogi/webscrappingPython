@@ -6,9 +6,10 @@ node {
             ])
         ])
     def test1 = "${params.condition1}"
-	def test2 = "${params.condition2}"
+    def test2 = "${params.condition2}"
     def userInput = ""
     def dockertag = ""
+    def (userInput['Target']) = ""
     stage('Preparation') {
         echo "stage 1"
     }
@@ -48,7 +49,7 @@ node {
 	}
     stage('Results') {
         echo "stage 3"
-		def sec = (userInput['Target'])
-		echo "$sec"
+	def sec = (userInput['Target'])
+	echo "$sec"
     }
 }
