@@ -7,10 +7,9 @@ node {
         ])
     def test1 = "${params.condition1}"
     def test2 = "${params.condition2}"
-    def userInput = ""
+    //def userInput = ""
     def dockertag = ""
-    
-    def userInput['Target'] = ""
+    def userInput = ['Environment', 'Target'].withDefault { 'default' }
     stage('Preparation') {
         echo "stage 1"
     }
