@@ -1,0 +1,54 @@
+node {
+    properties([
+        parameters([
+            choice(name: 'condition1', choices: ['true', 'false'], description: 'Please provide requested input in stage view screen if selected condition is true')
+			choice(name: 'condition2', choices: ['true', 'false'], description: 'Please provide requested input in stage view screen if selected condition is true')
+            ])
+        ])
+    def test1 = "${params.condition1}"
+	def test2 = "${params.condition2}"
+    def userInput = ""
+    def dockertag = ""
+    stage('Preparation') {
+        echo "stage 1"
+    }
+    stage('DeployCondition1') {
+        echo "stage 2"
+        if ("$test1" == "true" ) {
+            echo "condition1 - $test1"
+            timeout(time: 120, unit: 'SECONDS') {
+              userInput = input(
+              id: 'userInput', message: 'Please enter Name and Target to continue', parameters: [
+              [$class: 'TextParameterDefinition', defaultValue: '', description: 'Enter env name', name: 'Environment'],
+              [$class: 'TextParameterDefinition', defaultValue: '', description: 'Enter target', name: 'Target']
+              ])              
+            }
+            echo "$userInput"
+            echo (userInput['Environment'])
+        }
+        else {
+            echo "condition1 - $test1"
+        }
+    }
+	stage('DeployCondition1') {
+		echo "stage 3"
+		if ("$test2" == "true" ) {
+            echo "condition2 - $test2"
+			timeout(time: 120, unit: 'SECONDS') {
+				dockertag = input(
+				id: 'dockertag', message: 'Please enter docker tag to continue', parameters: [
+				string(defaultValue: '', description: 'latest', name: 'docker_tag')
+				])					
+			}
+			echo "$dockertag"
+		}
+		else {
+            echo "condition2 - $test2"
+        }
+	}
+    stage('Results') {
+        echo "stage 3"
+		def sec = (userInput['Target'])
+		echo "$sec"
+    }
+}
