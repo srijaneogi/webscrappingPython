@@ -9,7 +9,7 @@ node {
     def test2 = "${params.condition2}"
     def userInput = ""
     def dockertag = ""
-    def (userInput['Target']) = ""
+    (userInput['Target']) = ""
     stage('Preparation') {
         echo "stage 1"
     }
