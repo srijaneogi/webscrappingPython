@@ -1,8 +1,8 @@
 node {
     properties([
         parameters([
-            choice(name: 'condition1', choices: ['true', 'false'], description: 'Please provide requested input in stage view screen if selected condition is true')
-			choice(name: 'condition2', choices: ['true', 'false'], description: 'Please provide requested input in stage view screen if selected condition is true')
+            choice(name: 'condition1', choices: ['true', 'false'], description: 'Please provide requested input in stage view screen if selected condition is true'),
+	    choice(name: 'condition2', choices: ['true', 'false'], description: 'Please provide requested input in stage view screen if selected condition is true')
             ])
         ])
     def test1 = "${params.condition1}"
