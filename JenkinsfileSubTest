@@ -9,7 +9,7 @@ node {
     def test2 = "${params.condition2}"
     def userInput = ""
     def dockertag = ""
-    assert userInput[1] = 'default'
+    assert userInput[1] == 'default'
     stage('Preparation') {
         echo "stage 1"
     }
