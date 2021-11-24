@@ -14,7 +14,7 @@ node {
         echo "stage 1"
     }
     stage('DeployCondition1') {
-        echo "stage 2"
+        echo "stage 2 DeployCondition1"
         if ("$test1" == "true" ) {
             echo "condition1 - $test1"
             timeout(time: 120, unit: 'SECONDS') {
@@ -30,7 +30,7 @@ node {
         }
     }
 	stage('DeployCondition1') {
-		echo "stage 3"
+		echo "stage 3 DeployCondition2"
 		if ("$test2" == "true" ) {
             echo "condition2 - $test2"
 			timeout(time: 120, unit: 'SECONDS') {
