@@ -24,8 +24,6 @@ node {
               [$class: 'TextParameterDefinition', defaultValue: '', description: 'Enter target', name: 'Target']
               ])              
             }
-            echo "$userInput"
-            echo (userInput['Environment'])
         }
         else {
             echo "condition1 - $test1"
@@ -48,8 +46,11 @@ node {
         }
 	}
     stage('Results') {
-        echo "stage 3"
+        echo "stage 3 Printing results"
+	echo "$userInput"
+        echo (userInput['Environment'])
 	def sec = (userInput['Target'])
 	echo "$sec"
+	echo "$dockertag"
     }
 }
