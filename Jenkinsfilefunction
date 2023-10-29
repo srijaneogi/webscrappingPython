@@ -1,16 +1,16 @@
-properties([
-        parameters([
+
+node {
+        properties([
+          parameters([
             string(name: 'env', defaultValue: 'TESTING')
             ])
-])
-node {
+        ])
     
-    def env = "${params.env}"
-    stage('Preparation') { 
-        echo "env---------------$env"
-    }
-    stage('Build') {
-      echo "Nothing"
-        
-    }
+        def env = "${params.env}"
+        stage('Preparation') { 
+          echo "env---------------$env"
+        }
+        stage('Build') {
+          echo "Nothing"
+        }
 }
