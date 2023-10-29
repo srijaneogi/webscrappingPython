@@ -1,0 +1,15 @@
+node {
+    properties([
+        parameters([
+            string(name: 'env', description: 'Please provide requested input')
+            ])
+        ])
+    def env = ${params.env}
+    stage('Preparation') { 
+        echo "env---------------$env"
+    }
+    stage('Build') {
+      echo "Nothing"
+        
+    }
+}
